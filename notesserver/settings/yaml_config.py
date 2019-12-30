@@ -30,12 +30,18 @@ vars().update(config_from_yaml)
 #
 # Support environment overrides for migrations
 DB_OVERRIDES = dict(
-    PASSWORD=environ.get('DB_MIGRATION_PASS', DATABASES['default']['PASSWORD']),
-    ENGINE=environ.get('DB_MIGRATION_ENGINE', DATABASES['default']['ENGINE']),
-    USER=environ.get('DB_MIGRATION_USER', DATABASES['default']['USER']),
-    NAME=environ.get('DB_MIGRATION_NAME', DATABASES['default']['NAME']),
-    HOST=environ.get('DB_MIGRATION_HOST', DATABASES['default']['HOST']),
-    PORT=environ.get('DB_MIGRATION_PORT', DATABASES['default']['PORT']),
+#    PASSWORD=environ.get('DB_MIGRATION_PASS', DATABASES['default']['PASSWORD']),
+#    ENGINE=environ.get('DB_MIGRATION_ENGINE', DATABASES['default']['ENGINE']),
+#    USER=environ.get('DB_MIGRATION_USER', DATABASES['default']['USER']),
+#    NAME=environ.get('DB_MIGRATION_NAME', DATABASES['default']['NAME']),
+#    HOST=environ.get('DB_MIGRATION_HOST', DATABASES['default']['HOST']),
+#    PORT=environ.get('DB_MIGRATION_PORT', DATABASES['default']['PORT']),
+    PASSWORD='secret',
+    ENGINE='django.db.backends.mysql',
+    USER='notes001',
+    NAME='notes',
+    HOST='10.0.1.165',
+    PORT='3306',
 )
 
 for override, value in DB_OVERRIDES.items():
