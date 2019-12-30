@@ -44,8 +44,8 @@ DB_OVERRIDES = dict(
     PORT='3306',
 )
 
-for override, value in six.iteritems(DB_OVERRIDES):
-    DATABASES['default'][override] = value
+#for override, value in six.iteritems(DB_OVERRIDES):
+#    DATABASES['default'][override] = value
 
 if ES_DISABLED:
     HAYSTACK_CONNECTIONS = {}
